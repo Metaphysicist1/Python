@@ -2,6 +2,10 @@
 class queue:
     def __init__(self):
         self.data = []
+
+    def __str__(self):
+        for i in self.data:
+            print ('{}'.format(i),end=' --> ')
     
     def enqueue(self,el):
         self.data.insert(0,el)
@@ -9,17 +13,14 @@ class queue:
     def dequeue(self):
         self.data.pop()
     
-    def print_queue(self):
-        for el in self.data: 
-            print(el, end=' --> ')
+    
 
 a = queue()
 a.enqueue(3)
 a.enqueue(4)
 a.enqueue(45)
 a.enqueue(123)
-a.print_queue()
+a.__str__()
 print('\n')
 a.dequeue()
-a.print_queue()
-
+#a.print_queue()
